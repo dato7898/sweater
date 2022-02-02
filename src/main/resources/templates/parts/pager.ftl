@@ -14,8 +14,9 @@
     <#else>
         <#assign body = 1..page.getTotalPages()>
     </#if>
-    <div class="mt-3">
-        <ul class="pagination">
+    <div class="container mt-3">
+        <div class="row">
+        <ul class="pagination col justify-content-center">
             <li class="page-item disabled">
                 <a class="page-link" href="#" tabindex="-1">Страницы</a>
             </li>
@@ -30,13 +31,13 @@
                     </li>
                 <#else>
                     <li class="page-item">
-                        <a class="page-link" href="${url}?page=${p - 1}&size=${page.getSize()}" tabindex="-1">${p}</a>
+                        <a class="page-link" href="${url}?page=${p - 1}&amp;size=${page.getSize()}" tabindex="-1">${p}</a>
                     </li>
                 </#if>
             </#list>
         </ul>
 
-        <ul class="pagination">
+        <ul class="pagination col justify-content-center">
             <li class="page-item disabled">
                 <a class="page-link" href="#" tabindex="-1">Элементов на странице</a>
             </li>
@@ -47,10 +48,11 @@
                     </li>
                 <#else>
                     <li class="page-item">
-                        <a class="page-link" href="${url}?page=${page.getNumber()}&size=${c}" tabindex="-1">${c}</a>
+                        <a class="page-link" href="${url}?page=${page.getNumber()}&amp;size=${c}" tabindex="-1">${c}</a>
                     </li>
                 </#if>
             </#list>
         </ul>
+        </div>
     </div>
 </#macro>
